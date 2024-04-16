@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>DALL.E3 API 호출 샘플</title>
+    <style>
+      select {
+        width: 270px;
+        height: 50px;
+        font-size: 20pt;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        width: 400px;
+        height: 50px;
+        font-size: 20pt;
+        margin-bottom: 10px;
+      }
+
+      button {
+        width: 180px;
+        height: 48px;
+        font-size: 20pt;
+        vertical-align: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>DALL.E3 API 호출 샘플-2024.04.15 기준</h1>
+
+    <form action="/dalle3" method="post">
+      <select name="version">
+        <option value="">DALL.E 버전 선택</option>
+        <option value="dall-e-2">DALL.E 2</option>
+        <option value="dall-e-3">DALL.E 3</option>
+      </select>
+      <br />
+      <select name="size">
+        <option value="">이미지 크기 선택</option>
+        <option value="1024x1024">1024x1024</option>
+      </select>
+      <br />
+      <input
+        type="text"
+        name="prompt"
+        id="prompt"
+        value=""
+        placeholder="프롬프트"
+      />
+      <button type="submit">이미지 생성</button>
+      <br />
+      BinaryData: <%=imageBinaryData%> <br />
+      <img src="<%=imageURL%>" />
+    </form>
+  </body>
+</html>
